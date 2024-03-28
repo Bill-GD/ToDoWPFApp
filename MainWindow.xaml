@@ -1,0 +1,169 @@
+﻿<Window
+    x:Class="ToDoWPFApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ToDoWPFApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="To-Do"
+    Width="420"
+    Height="450"
+    Loaded="Window_Loaded"
+    ResizeMode="CanMinimize"
+    SizeToContent="WidthAndHeight"
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    <Grid Width="420" Height="450">
+        <Label
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="To-Do List"
+            FontSize="20" />
+        <ListBox
+            Name="listboxToDo"
+            Margin="10,47,210,25"
+            SelectionChanged="listboxToDo_SelectionChanged" />
+        <TextBox
+            Name="textboxContent"
+            Width="190"
+            Height="124"
+            Margin="220,72,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="Gray"
+            GotFocus="textboxContent_GotFocus"
+            LostFocus="textboxContent_LostFocus"
+            Text="Content of To-Do"
+            TextWrapping="Wrap" />
+        <Button
+            Name="buttonAdd"
+            Width="90"
+            Height="27"
+            Margin="220,230,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF707070"
+            Click="buttonAdd_Click"
+            Content="Add To-Do"
+            Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            Name="buttonRemove"
+            Width="89"
+            Height="27"
+            Margin="321,230,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="buttonRemove_Click"
+            Content="Remove To-Do"
+            Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox
+            x:Name="textboxTitle"
+            Width="190"
+            Height="20"
+            Margin="220,47,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="Gray"
+            GotFocus="textboxTitle_GotFocus"
+            LostFocus="textboxTitle_LostFocus"
+            Text="Title of To-Do"
+            TextWrapping="Wrap" />
+        <TextBox
+            Name="textboxHelp"
+            Width="190"
+            Height="99"
+            Margin="220,326,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            BorderThickness="0,0,0,0"
+            Cursor="Arrow"
+            Focusable="False"
+            Foreground="Gray"
+            IsReadOnly="True"
+            IsTabStop="False"
+            IsUndoEnabled="False"
+            Text="Extra Information and Notification will show up here."
+            TextWrapping="Wrap"
+            ToolTip="Detailed Infomation. You CAN scroll." />
+        <Button
+            Name="buttonReload"
+            Width="90"
+            Height="27"
+            Margin="220,294,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF707070"
+            Click="buttonReload_Click"
+            Content="Reload"
+            Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            Name="buttonRemoveAll"
+            Width="89"
+            Height="27"
+            Margin="321,262,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="buttonRemoveAll_Click"
+            Content="Remove All"
+            Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="buttonModify"
+            Width="90"
+            Height="27"
+            Margin="220,262,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF707070"
+            Click="buttonModify_Click"
+            Content="Modify"
+            Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox
+            Name="textboxFinished"
+            Width="74"
+            Height="24"
+            Margin="278,201,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Cursor="Arrow"
+            Foreground="Gray"
+            GotFocus="textboxFinished_GotFocus"
+            IsReadOnly="True"
+            IsTabStop="False"
+            IsUndoEnabled="False"
+            Text="Status"
+            TextWrapping="Wrap" />
+    </Grid>
+</Window>
